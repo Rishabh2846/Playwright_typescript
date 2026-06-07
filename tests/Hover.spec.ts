@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { getUrl } from '../util/commonutil';
 
 test('Hover', async ({ page }) => {
 
-await page.goto('https://practice.expandtesting.com/hovers');
+await page.goto(getUrl('/hovers'));
 await page.getByTestId('img-user-1').hover();
 await expect(page.getByRole('heading', { name: 'name: user1' })).toBeVisible();
 await expect(page.getByRole('link', { name: 'View profile' })).toBeVisible();

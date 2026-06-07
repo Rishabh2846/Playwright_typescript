@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { getUrl } from '../util/commonutil';
 
 test('API testing using UI', async ({ page }) => {
-  await page.goto('https://practice.expandtesting.com/notes/api/api-docs/');
+  await page.goto(getUrl('/notes/api/api-docs/'));
   await page.getByRole('button', { name: 'GET /health-check Check the' }).click();
   await page.getByRole('button', { name: 'Try it out' }).click();
   await page.getByRole('button', { name: 'Execute' }).click();

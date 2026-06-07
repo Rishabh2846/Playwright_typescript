@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { getUrl } from '../util/commonutil';
 
 test('Login Page', async ({ page }) => {
-  await page.goto('https://practice.expandtesting.com/login');
+  await page.goto(getUrl('/login'));
   await expect(page.getByRole('heading', { name: 'Test Login page for' })).toBeVisible();
   await page.getByRole('textbox', { name: 'Username' }).fill('Practice');
   await page.getByRole('textbox', { name: 'Password' }).fill('SuperSecretPassword!');

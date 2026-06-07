@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { getUrl } from '../util/commonutil';
 
 test('Web Inputs', async ({ page }) => {
 
 
-await page.goto('https://practice.expandtesting.com/inputs');
+await page.goto(getUrl('/inputs'));
 
 await page.getByRole('spinbutton', { name: 'Input: Number' }).fill('123455');
 

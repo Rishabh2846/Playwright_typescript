@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { getUrl } from '../util/commonutil';
 
 test('Drag and Drop', async ({ page }) => {
-  await page.goto('https://practice.expandtesting.com/drag-and-drop');
+  await page.goto(getUrl('/drag-and-drop'));
   await expect(page.getByRole('heading', { name: 'Drag and Drop page for' })).toBeVisible();
   await expect(page.locator('#column-a')).toBeVisible();
  await expect(page.locator('#column-b')).toBeVisible();
